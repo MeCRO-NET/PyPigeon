@@ -31,6 +31,12 @@ jobs:
         languages: 'python'
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v3
       with:
         category: 'security'
+
+    - name: Upload CodeQL results
+      uses: actions/upload-artifact@v3
+      with:
+        name: codeql-results
+        path: /home/runner/work/_temp/codeql_databases/python.zip
