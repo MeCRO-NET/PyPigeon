@@ -40,3 +40,8 @@ jobs:
       with:
         name: codeql-results
         path: /home/runner/work/_temp/codeql_databases/python.zip
+
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: /home/runner/work/_temp/codeql_databases/python.sarif
