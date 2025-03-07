@@ -45,6 +45,7 @@ jobs:
       run: find /home/runner/work/ -name "*.sarif" -print
 
     - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v3
+      uses: actions/upload-artifact@v4
       with:
-        sarif_file: /home/runner/work/PyPigeon/results/python.sarif
+        name: sarif-results
+        path: /home/runner/work/PyPigeon/results/python.sarif
